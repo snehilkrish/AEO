@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #fbfbfd;
+    color: #1d1d1f;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 113, 227, 0.07), transparent),
+      radial-gradient(ellipse 60% 40% at 50% 120%, rgba(255, 56, 92, 0.03), transparent);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-color: #000000;
+    color: #f5f5f7;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 113, 227, 0.12), transparent),
+      radial-gradient(ellipse 60% 30% at 50% 120%, rgba(255, 56, 92, 0.05), transparent);
+  }
+
+  code, pre, .font-mono, [data-mono] {
+    font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Apple Pro Typography Hierarchy */
+  h1 {
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  h2 {
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+
+  h3 {
+    letter-spacing: -0.018em;
+    line-height: 1.25;
+  }
+
+  h4 {
+    letter-spacing: -0.012em;
+    line-height: 1.35;
+  }
+}
+
+/* Apple & Airbnb Glass & Surface System (Dual Light/Dark Engine) */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 12px 32px -8px rgba(0, 0, 0, 0.06);
+}
+
+.dark .apple-glass {
+  background: rgba(22, 22, 26, 0.72);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.apple-glass-card {
+  background: #ffffff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 20px -2px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-glass-card:hover {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 1) inset,
+    0 12px 28px -6px rgba(0, 0, 0, 0.08);
+}
+
+.dark .apple-glass-card {
+  background: rgba(24, 24, 27, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 8px 24px -4px rgba(0, 0, 0, 0.35);
+}
+
+.dark .apple-glass-card:hover {
+  background: rgba(30, 30, 35, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+    0 16px 36px -6px rgba(0, 0, 0, 0.45);
+}
+
+.apple-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-btn-primary:hover {
+  background: #27272a;
+  transform: scale(1.015);
+}
+
+.apple-btn-primary:active {
+  transform: scale(0.985);
+}
+
+.dark .apple-btn-primary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark .apple-btn-primary:hover {
+  background: #e5e5ea;
+}
+
+.apple-btn-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  color: #1d1d1f;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #000000;
+}
+
+.dark .apple-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f7;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .apple-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}

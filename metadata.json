@@ -1,0 +1,6 @@
+{
+  "name": "Omnia AEO - White-Label Answer Engine Optimization Platform",
+  "description": "Multi-agent Answer Engine Optimization (AEO) platform for agencies delivering AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews in German, Japanese, Portuguese, and Spanish.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
